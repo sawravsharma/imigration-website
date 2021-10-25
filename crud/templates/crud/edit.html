@@ -1,0 +1,127 @@
+
+{% block body %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+* {
+  box-sizing: border-box;
+}
+
+/* Add padding to containers */
+.container {
+  padding: 16px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for the submit button */
+.updatebtn {
+  background-color: DodgerBlue;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.updatebtn:hover {
+  opacity: 1;
+}
+</style>
+    <form method="POST" action="/crud/myupdate">
+        {% csrf_token %}
+       
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" name="name" value="{{ purposes.name }}" required="required"/>
+		</div>
+		
+		<div class="form-group">
+		    <label for="age">Age</label>
+			<input type="text" name="age" value="{{ purposes.age }}" required="required"/>
+		</div>
+		
+		<div class="form-group">
+		    <label for="phone">Phone Number</label>
+			<input type="text" name="phone" value="{{ purposes.phone }}" required="required"/>
+		</div>
+		
+		<div class="form-group">
+            <label for="tenth">Tenth passing year</label>
+            <input type="text" name="tenth" value="{{ purposes.tenth }}" required="required"/>	
+        </div>
+		
+		<div class="form-group">
+            <label for="twelth">Twelth passing year</label>
+            <input type="text" name="twelth" value="{{ purposes.twelth }}" required="required"/>	
+        </div>
+		
+		<div class="form-group">
+            <label for="stream">Stream</label>
+            <input type="text" name="stream" value="{{ purposes.stream }}" required="required"/>	
+        </div>
+		
+		<div class="form-group">
+		    <label for="visa_date_applied">Visa Applied: </label>
+            <input type="date" value="{{ purposes.visa_date_applied }}" name="visa_date_applied"  required>
+	    </div>
+	    <br>
+		<div class="form-group">
+		    <label for="visa_date_recieved">Visa Recieved:</label>
+            <input type="date" value="{{ purposes.visa_date_recieved }}" name="visa_date_recieved" required>
+		</div>
+		<br>
+		<div class="form-group">
+            <label for="graduate">Graduation</label>
+            <input type="text" name="graduate" value="{{ purposes.graduate }}" required="required"/>	
+        </div>
+		<div class="form-group">
+            <label for="college">College Name</label>
+            <input type="text" name="college" value="{{ purposes.college }}" required="required"/>	
+        </div>
+		
+		<div class="form-group">
+            <label for="country">Country</label>
+            <input type="text" name="country" value="{{ purposes.country }}" required="required"/>	
+        </div>
+		
+		<div class="form-group">
+            <label for="purpose_of_visit">Visa  type</label>
+            <input type="text" name="purpose_of_visit" value="{{ purposes.purpose_of_visit }}" required="required"/>	
+        </div>
+		
+
+		
+		
+		
+        <div class="form-group">
+            <button type="submit" href="update/{{ purposes.id }}"  class="updatebtn"> U P D A T E</button>
+        </div>
+		
+    </form>
+{% endblock %}

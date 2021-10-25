@@ -1,0 +1,118 @@
+
+ {% block body %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: black;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Add padding to containers */
+.container {
+  padding: 16px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for the submit button */
+.registerbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  opacity: 1;
+}
+
+</style>
+</head>
+<body>
+  {% load static %}
+<link rel="stylesheet" href="{%static 'crud/css/bootstrap.min.css' %}">	
+<form action="purp" method="post">
+{% csrf_token %}
+  <div class="container">
+    <h1>Register</h1>
+    <hr>
+
+    <label for="name"><b>Name</b></label>
+    <input type="text" placeholder="Enter Name" name="name" id="name" required>
+	
+	<label for="age"><b>Age</b></label>
+	<input type="text" placeholder="Enter Age" name="age" id="age" required>
+	
+	<label for="tenth"><b>Tenth Passing Year</b></label>
+	<input type="text" paceholder="Enter your passing year" name="tenth" id="tenth" required>
+	
+	<label for="twelth"><b>Twelth Passing Year</b></label>
+	<input type="text" placeholder="Enter your twelth passing year" name="twelth" id="twelth" required>
+	
+	<label for="graduate"><b>Graduation</b></label>
+	<input type="text" placeholder="Graduate or Not" name="graduate" id="graduate" required>
+	
+	<label for="stream"><b>Stream</b></label>
+    <input type="text" placeholder="Which stream you want to pursue" name="stream" id="stream" required>
+	
+	<label for="phone">Phone Number</label>
+    <input type="text" placeholder="phone" name="phone" id="phone" required>
+	
+	<label for="visa_date_applied">Visa Applied:</label>
+    <input type="date" id="visa_date_applied" name="visa_date_applied" required>
+	
+	<label for="visa_date_recieved"><b>Visa Recieved:</b></label>
+    <input type="date" id="visa_date_recieved" name="visa_date_recieved" required>
+
+    <label for="prpv"><b>Visa Type</b></label>
+    <input type="text" placeholder="Enter Visa Type" name="purpose_of_visit" id="purpose_of_visit" required>
+  
+    <label for="college">College Name</label>
+    <input type="text" placeholder="college" name="college" id="college" required>	
+     
+    <label for="country">Country</label>
+    <input type="text" placeholder="Country" name="country" id="country" required>
+
+ 
+     
+    <hr>
+
+    <button type="submit" class="registerbtn">Register</button>
+  </div>
+
+</form>
+
+</body>
+</html>
+{% endblock %}	

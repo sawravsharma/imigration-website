@@ -1,0 +1,54 @@
+{% extends 'crud/base.html' %}
+{% block body %}
+<form class="form-inline"  action="pcreate" method="POST">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" name="name" class="form-control" style="width:30%;" required="required"/>
+		<label for="name">Price</label>
+        <input type="text" name="price" class="form-control" style="width:30%;" required="required"/>
+		<label for="color">Color</label>
+        <input type="text" name="color" class="form-control" style="width:30%;" required="required"/>
+		<label for="category">Category</label>
+        <input type="text" name="category" class="form-control" style="width:30%;" required="required"/>
+    	<label for="image">Image</label>
+        <input type="text" name="image" class="form-control" style="width:30%;" required="required"/>
+		<label for="engine">Engine</label>
+        <input type="text" name="image" class="form-control" style="width:30%;" required="required"/>
+    	<label for="">Displacement</label>
+        <input type="text" name="displacement" class="form-control" style="width:30%;" required="required"/>
+    	<label for="power">Power</label>
+        <input type="text" name="power" class="form-control" style="width:30%;" required="required"/>
+    	<label for="drivetrain">Drivetrain</label>
+        <input type="text" name="drivetrain" class="form-control" style="width:30%;" required="required"/>
+    	<label for="fuel_tank_capacity">Fuel Tank Capacity</label>
+        <input type="text" name="fuel_tank_capacity" class="form-control" style="width:30%;" required="required"/>
+    	<label for="airbags">Airbags</label>
+        <input type="text" name="airbags" class="form-control" style="width:30%;" required="required"/>
+    
+
+
+
+        <button type="submit" class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-plus"></span> ADD</button>
+    </div>
+</form>
+<br />
+<table class="table table-bordered">
+    <thead class="alert-warning">
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for p in products %}
+        <tr>
+            <td>{{ p.name }}</td>
+            <td>${{p.price}}</td>
+            <td><center><a class="btn btn-sm btn-danger" href="delete/{{ p.name }}"><span class="glyphicon glyphicon-trash"></span> Delete</a></center></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

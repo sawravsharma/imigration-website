@@ -1,0 +1,81 @@
+
+{% block body %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+* {
+  box-sizing: border-box;
+}
+
+/* Add padding to containers */
+.container {
+  padding: 16px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for the submit button */
+.updatebtn {
+  background-color: DodgerBlue;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.updatebtn:hover {
+  opacity: 1;
+}
+</style>
+    <form method="POST" action="/crud/update">
+        {% csrf_token %}
+       
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" name="name" value="{{ purposes.name }}" required="required"/>
+		</div>	
+		<div class="form-group">
+            <label for="purpose_of_visit">Visa  type</label>
+            <input type="text" name="purpose_of_visit" value="{{ purposes.purpose_of_visit }}" required="required"/>	
+        </div>
+		<div class="form-group">
+            <label for="college_name">College Name</label>
+            <input type="text" name="college_name" value="{{ purposes.college_name }}" required="required"/>	
+        </div>
+		<div class="form-group">
+            <label for="state_name">State</label>
+            <input type="text" name="state_name" value="{{ purposes.state_name }}" required="required"/>	
+        </div>
+		<div class="form-group">
+		    <label for="visa_status">Visa Status</label>
+			<input type="text" name="visa_status" value="{{ purposes.visa_status }}" required="required"/>
+		</div>
+		
+    </form>
+{% endblock %}

@@ -1,0 +1,165 @@
+
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Login</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	
+      <!--//booststrap end-->
+	  
+      <!-- font-awesome icons -->
+	  <link rel="stylesheet" href="css/fontawesome-all.css">
+      <!-- //font-awesome icons -->
+     <!--stylesheets-->
+	 <link href="css/style.css" rel='stylesheet' type='text/css' media="all">
+  <style>
+.avatar {
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.navbar-default .navbar-brand{
+	collor:#d7e2e9;
+}
+.navbar-fixed-top {
+    min-height: 80px;
+	}
+
+.navbar-nav > li > a {
+    padding-top: 5px;
+    padding-bottom: 0px;
+    line-height: 80px;
+}
+	.glyphicon {
+    font-size: 30px;
+}
+	.glyphicon.glyphicon-log-in {
+    font-size: 30px;
+}
+
+ </style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+	  {% load static %}
+      <a class="navbar-brand" href="http://localhost:8000"><img src="{%static 'crud/img/car4.JPG'%}" alt="Avatar" class="avatar"></a>
+</div>
+
+<div class="collapse navbar-collapse" id="myNavbar">
+<ul class="nav navbar-nav">
+<li class="active"><a href="http://localhost:8000">Home</a></li>
+
+</ul>
+<ul class="nav navbar-nav navbar-right">
+
+<li><a href="http://localhost:8000/crud/log"><span class="glyphicon glyphicon-log-in"></span>&nbsp;Login</a></li>
+</ul>
+</div>
+</div>
+</nav>
+
+<hr>
+<p>
+<p> <p>
+<p>
+<hr>
+<p>
+<p> <p>
+<p>
+<hr>
+<p>
+<p> <p>
+<p>
+<hr>
+<p>
+<p> <p>
+<p>
+
+<center>
+<h1>LOGIN</h1>
+
+
+
+
+
+<script language="javascript">
+ 
+function validate(f)
+{
+if(f.username.value=="")
+{
+alert('username cannot be blank');
+return;
+}
+if(f.password.value=="")
+{
+alert('password cannot be blank');
+return;
+}
+f.submit();
+}
+
+</script> 
+  {% load static %}
+<link rel="stylesheet" href="{%static 'crud/css/bootstrap.min.css' %}">	
+<div class = "panel panel-primary">
+<form class="form-inline"  action="login" method="POST">
+  {% csrf_token %}
+<hr>
+<p>
+<p> <p>
+<p>
+<hr>
+<p>
+<p> <p>
+<p>
+<div class="container" > 
+    <div class="row" >
+        <div class="form-group">
+        <label for="username">USERNAME</label>
+        <input type="text" name="username" class="form-control" style="width:80%;" required="required"/>
+		</div>
+	</div>
+</div>	
+<hr>
+<p>
+<p> <p>
+<p>
+<hr>
+<p>
+<p> <p>
+<p>
+<div class="container" > 
+    <div class="row" >
+        <div class="form-group"> 
+        <label for="password">PASSWORD</label>
+        <input type="text" name="password" class="form-control" style="width:80%;" required="required"/>
+        </div>
+	</div>
+</div>
+<hr>
+<p>
+<p> <p>
+<p>
+<button type="submit" class="btn btn-sm btn-success"><span class="glyphicon glyphicon"></span> Login</button>
+</form>
+</div>
+
+{% endblock %}
